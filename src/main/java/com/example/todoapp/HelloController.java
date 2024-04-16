@@ -34,35 +34,26 @@ public class HelloController extends Application {
 
     @FXML
     protected void initialize() {
-        // Initialize the current date
         currentDate = LocalDate.now();
-        // Generate initial tasks
         List<Task> tasks = generateTasks();
-        // Add initial tasks to the TableView
         taskTableView.getItems().addAll(tasks);
     }
 
     @FXML
     protected void onAddButtonClick() {
-        // Get input values
         String title = addTitle.getText();
         String description = addDescription.getText();
         myDOB dueDate = parseDOB(addDueDate.getText());
         String status = addStatus.getText();
-        // Create a new task
         Task newTask = new Task(title, description, dueDate, status);
-        // Add the new task to the TableView
         taskTableView.getItems().add(newTask);
-        // Clear input fields
         clearInputFields();
     }
 
     @FXML
     protected void onEditButtonClick() {
-        // Get the selected task
         Task selectedTask = taskTableView.getSelectionModel().getSelectedItem();
         if (selectedTask != null) {
-            // Implement logic to handle editing the selected task
             showAlert(AlertType.INFORMATION, "Edit", "Editing task: " +  "Edit" + selectedTask.title);
         } else {
             showAlert(AlertType.WARNING, "No Task Selected", "Please select a task to edit.");
@@ -71,10 +62,10 @@ public class HelloController extends Application {
 
     @FXML
     protected void onDeleteButtonClick() {
-        // Get the selected task
+      
         Task selectedTask = taskTableView.getSelectionModel().getSelectedItem();
         if (selectedTask != null) {
-            // Remove the selected task from the TableView
+           
             taskTableView.getItems().remove(selectedTask);
         } else {
             showAlert(AlertType.WARNING, "No Task Selected", "Please select a task to delete.");
@@ -103,23 +94,21 @@ public class HelloController extends Application {
     }
 
     private myDOB parseDOB(String dobString) {
-        // Implement the logic to parse the due date string into a myDOB object
-        // For example, split the string and extract day, month, and year, then create a myDOB object
-        System.out.println("Input DOB string: " + dobString); // Debug output
+        System.out.println("Input DOB string: " + dobString); 
         String[] parts = dobString.split("/");
         int day = Integer.parseInt(parts[0]);
         int month = Integer.parseInt(parts[1]);
         int year = Integer.parseInt(parts[2]);
-        System.out.println("Parsed day: " + day + ", month: " + month + ", year: " + year); // Debug output
+        System.out.println("Parsed day: " + day + ", month: " + month + ", year: " + year); 
         return new myDOB(day, month, year);
     }
 
     @Override
     public void start(Stage stage) {
-        // No need to implement for this approach
+   
     }
 
-    // Main method for launching the application
+   
     public static void main(String[] args) {
         launch(args);
     }
