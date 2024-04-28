@@ -4,11 +4,15 @@ public class myDOB {
     private  int day;
     private  int month;
     private  int year;
+
+    // Constructor with parameters to initialize day, month, and year
     myDOB(int _day, int _month, int _year){
         this.day = _day;
         this.month = _month;
         this.year = _year;
     }
+
+    // Copy constructor to create a new instance of myDOB by copying the values from another myDOB object.
     myDOB(myDOB dob){
         this.day = dob.day;
         this.month = dob.month;

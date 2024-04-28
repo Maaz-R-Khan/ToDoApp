@@ -1,42 +1,37 @@
 package com.example.todoapp;
 
 public class PersonalTask extends Task{
-    private myDOB reminder;
+
     private String location;
-    private boolean recurring;
 
-    PersonalTask(String title, String description, myDOB dueDate, String status, myDOB reminder, String location, boolean recurring) {
+
+    //Parametric constructor
+    PersonalTask(String title, String description, myDOB dueDate, String status, String location ) {
         super(title, description, dueDate, status);
-        this.reminder = reminder;
         this.location = location;
-        this.recurring = recurring;
+
     }
 
-    // Getter and Setter for reminder
-    public myDOB getReminder() {
-        return reminder;
-    }
 
-    public void setReminder(myDOB reminder) {
-        this.reminder = reminder;
-    }
-
-    // Getter and Setter for location
+    // Getter method for location
     public String getLocation() {
         return location;
     }
 
+    //Setter method for location
     public void setLocation(String location) {
         this.location = location;
     }
 
-    // Getter and Setter for recurring
-    public boolean isRecurring() {
-        return recurring;
-    }
 
-    public void setRecurring(boolean recurring) {
-        this.recurring = recurring;
+    // Method to display details about the task.
+    //This method is also an override from the display details method from the task class.
+    //It additionally also displays the location attribute and identifies that this is a personal task.
+    @Override
+    public void DisplayDetails() {
+        super.DisplayDetails();
+        System.out.println("Location: " + location);
+        System.out.println("This task is a Personal Task");
     }
 
 }

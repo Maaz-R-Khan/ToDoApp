@@ -14,29 +14,32 @@
             <children>
                 <Label layoutX="26.0" layoutY="32.0" prefHeight="16.0" prefWidth="24.0" text="Title" />
                 <TextField id="addTitle" fx:id="addTitle" layoutX="145.0" layoutY="27.0" />
-
                 <Label layoutX="26.0" layoutY="74.0" prefHeight="11.0" prefWidth="63.0" text="Description" />
-                <TextField id="addDescription" fx:id="addDescription" layoutX="145.0" layoutY="73.0" prefWidth="200" />
-
+                <TextField id="addDescription" fx:id="addDescription" layoutX="145.0" layoutY="73.0" prefHeight="26.0" prefWidth="186.0" />
                 <Label layoutX="26.0" layoutY="114.0" prefHeight="4.0" prefWidth="51.0" text="Due Date" />
                 <TextField id="addDueDate" fx:id="addDueDate" layoutX="145.0" layoutY="110.0" />
-
                 <Label layoutX="29.0" layoutY="164.0" prefHeight="17.0" prefWidth="42.0" text="Status" />
-                <TextField id="addStatus" fx:id="addStatus" layoutX="145.0" layoutY="159.0" />
-
+                <TextField id="addStatus" fx:id="addStatus" layoutX="145.0" layoutY="159.0" /> 
                 <Button id="addButton" layoutX="145.0" layoutY="200.0" mnemonicParsing="false" onAction="#onAddButtonClick" prefWidth="100" text="Add" />
                 <Button id="editButton" layoutX="250.0" layoutY="200.0" mnemonicParsing="false" onAction="#onEditButtonClick" prefWidth="100" text="Edit" />
                 <Button id="deleteButton" layoutX="355.0" layoutY="200.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" prefWidth="100" text="Delete" />
-
-                <!-- TableView for Task List -->
                 <TableView fx:id="taskTableView" layoutX="10.0" layoutY="240.0" prefHeight="120.0" prefWidth="580.0">
                     <columns>
                         <TableColumn fx:id="titleColumn" prefWidth="200.0" text="Title" />
                         <TableColumn fx:id="descriptionColumn" prefWidth="200.0" text="Description" />
                         <TableColumn fx:id="dueDateColumn" prefWidth="100.0" text="Due Date" />
-                        <TableColumn  fx:id="statusColumn" prefWidth="80.0" text="Status" />
+                        <TableColumn fx:id="statusColumn" prefWidth="100.0" text="Status" />
+                        <TableColumn fx:id="locationColumn" prefWidth="200.0" text="Location" />
+                        <TableColumn fx:id="AssignedToColumn" prefWidth="100.0" text="Assigned To" />
+                        <TableColumn fx:id="ForProjectColumn" prefWidth="100.0" text="For Project" />
                     </columns>
                 </TableView>
+            <TextField fx:id="addLocation" layoutX="424.0" layoutY="28.0" />
+            <Label layoutX="358.0" layoutY="33.0" prefHeight="17.0" prefWidth="49.0" text="Location" />
+            <Label layoutX="346.0" layoutY="79.0" prefHeight="17.0" prefWidth="72.0" text="Assigned To" />
+            <TextField id="AddAssignedTo" fx:id="addAssignedTo" layoutX="423.0" layoutY="74.0" prefHeight="26.0" prefWidth="158.0" />
+            <TextField id="AddForProject" fx:id="addForProject" layoutX="424.0" layoutY="123.0" />
+            <Label layoutX="352.0" layoutY="125.0" prefHeight="22.0" prefWidth="61.0" text="For Project" />
             </children>
         </AnchorPane>
     </content>
